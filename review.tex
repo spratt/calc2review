@@ -6,10 +6,18 @@
 
 \usepackage{fullpage}
 \usepackage{parskip}
+\usepackage{amsmath}
+
+\title{MATH 2007 Review}
+\author{Simon Pratt}
+\date{\today}
 
 \begin{document}
 
 {\Huge MATH 2007 Review}
+
+\section{Topics Covered}
+{\tiny *Section numbers are from Nelson's custom text book for the course}
 
 Test 1
 \begin{itemize}
@@ -53,5 +61,26 @@ Final Exam
 \end{itemize}
 
 \newpage
+\section{Integration by Substitution}
+
+For example:
+
+\[
+\int \frac{dx}{xlnx}
+\]
+
+Let $u=lnx$, $du=\frac{1}{x}$, then we have:
+
+\begin{align*}
+  &\int \frac{dx}{xlnx} \\
+  = &\int u^{-1}du \\
+  = &ln \left| u \right| \\
+\end{align*}
+
+And substituting $u$ back in, we get:
+
+\[
+\int \frac{dx}{xlnx} = \ln \left| lnx \right|
+\]
 
 \end{document}
