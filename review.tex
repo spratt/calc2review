@@ -63,24 +63,64 @@ Final Exam
 \newpage
 \section{Integration by Substitution}
 
+When we are presented with an integral that is the product of a
+function with its derivative, we can substitute the function for a new
+variable and its derivative for the differential of that variable.
+
 For example:
 
 \[
 \int \frac{dx}{xlnx}
 \]
 
-Let $u=lnx$, $du=\frac{1}{x}$, then we have:
+We know the derivative of $lnx$ is $\frac{1}{x}$.  Let $u=lnx$,
+$du=\frac{1}{x}$, then we have:
 
-\begin{align*}
-  &\int \frac{dx}{xlnx} \\
-  = &\int u^{-1}du \\
-  = &ln \left| u \right| \\
-\end{align*}
+\[
+\int u^{-1}du
+\]
+
+Then we can differentiate with respect to $u$ and get:
+
+\[
+ln \left| u \right| \\
+\]
 
 And substituting $u$ back in, we get:
 
 \[
 \int \frac{dx}{xlnx} = \ln \left| lnx \right|
 \]
+
+This method of integration is analagous to the chain rule for
+differentiation.
+
+\newpage
+\section{Integration by Parts}
+
+Sometimes we are presented with the integral of a product of
+functions, one of which gets simpler when derived and the other gets
+simpler when integrated.  In this case, we can use the formula:
+
+\[
+\int udv = uv - \int vdu
+\]
+
+For example:
+
+\[
+\int xe^xdx
+\]
+
+Let $u = x$, $dv = e^x$, and thusly $du = dx$, $v = e^x$, we get:
+
+\begin{align*}
+  &xe^x - \int e^xdx \\
+  = &xe^x - e^x \\
+  = &e^x(x-1)
+\end{align*}
+
+This method of integration is analagous to the product rule for
+differentiation.
 
 \end{document}
