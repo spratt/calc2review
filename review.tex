@@ -262,38 +262,136 @@ And we've shown about that $\int secx (tanx)^2 dx = \int (secx)^3 dx -
 
 \section{Trigonometric Substitution}
 
+When we have an integral containing a square root of the sum of two
+squares, we can substitute trig identities to make the integral simpler.
+
+For example:
+
 \section{Partial Fractions}
+
+When we are confronted with a product of two functions in the
+denominator of a fraction, we can use partial fractions to simplify.
+
+For example:
 
 \section{Indeterminate Forms and L'H\^{o}spital's Rule}
 
+Common indeterminate forms are $\frac{0}{0}$, $\frac{\infty}{\infty}$
+and $\infty^\infty$.
+
 \section{Improper Integrals}
+
+I don't remember this section at all.
 
 \section{Plane Curves and Parametric Equations}
 
+A plane curve is when we rotate a given curve about an axis.
+
+Parametric equations are when $x$ and $y$ are given in terms of a parameter $t$.
+
 \section{Parametric Equations and Calculus}
+
+If we are given $x$ in terms of $t$ then:
+
+\begin{align*}
+  x &= f(t) \\
+  dx &= f'(t)dt \\
+  \frac{dx}{dt} &= f'(t)
+\end{align*}
+
+and $y$ in terms of $t$:
+
+\begin{align*}
+  y &= g(t) \\
+  dy &= g'(t)dt \\
+  \frac{dy}{dt} &= g'(t)
+\end{align*}
+
+Then we can determine $\frac{dy}{dx}$ by:
+
+\begin{align*}
+  \frac{dy}{dx} &= \frac{ \frac{dy}{dt} }{ \frac{dx}{dt} } \\
+  &= \frac{g'(t)}{f'(t)}
+\end{align*}
 
 \section{Polar Coordinates and Polar Graphs}
 
+Polar coordinates are given as a tuple of radius and angle.  A polar
+graph is radius as a function of angle.
+
 \section{Area and Arc Length in Polar Coordinates}
+
+I don't remember.
 
 \section{Sequences}
 
+A sequence is an ordered set of numbers, such as $1,2,3$.  A sequence
+can be infinitely long such as $1,2,3,...$, and can be defined as $a_n
+= n$ where $a_n$ is the $n$th term in the sequence.
+
 \section{Series and Convergence}
+
+A series is a sum of the numbers in a sequence, such as $1+2+3$.  A
+sequence can be infinitely long, such as $1+2+3$, and can be defined
+using sigma notation: $S = \Sigma^\infty_{n=1}f(n)$ where $S$ is the
+value of the sum from 1 to infinity of the function $f(n)$.
+
+When a the limit of the value of a series or integral as n approaches
+infinity is defined and is equal to $L$, we say that the series or
+integral converges to $L$.
 
 \section{The Integral Test and p-Series}
 
+The integral test states that given a series of the form
+$\Sigma^\infty_{k=1}f(n)$, then if the integral $\int f(n)$ converges,
+then the series must also converge.
+
+A p-series is an infinite series of the form $\Sigma \frac{1}{n^p}$.
+Such a series converges when $p > 1$ and diverges otherwise.
+
 \section{Comparisons of Series}
+
+I don't remember.
 
 \section{Alternating Series}
 
+An alternating series is of the form $\Sigma (-1)^{n-1}a_n$.  A series
+$\Sigma f(n)$ is said to be absolutely convergent if $\Sigma \left|
+  f(n) \right|$ is convergent.  Any series which is absolutely
+convergent is also convergent.
+
 \section{The Ratio and Root Tests}
+
+The ratio test shows that given $\Sigma a_n$, and:
+
+\begin{math}
+  \lim_{n \to \infty} a_n = 0 \\
+  L = \lim_{n \to \infty} \left| \frac{a_{n+1}}{a_n} \right|
+\end{math}
+
+If $L<1$ then the series converges, if $L>1$ then the series diverges,
+and if $L=1$ then the ratio test is inconclusive.
+
+I forget the root test.
 
 \section{Taylor Polynomials and Approximations}
 
+Wat.
+
 \section{Power Series}
+
+A power series is of the form $\Sigma c_n(x-a)^n$.  Also, we define $(x-a)^0$ as 1 even when $x=a$ for convenience.
+
+Such a series is either always convergent, converges only when $x=a$ or has some radius of convergence about $x=a$.
 
 \section{Representation of Functions by Power Series}
 
+Wat.
+
 \section{Taylor and Maclaurin Series}
+
+A Taylor series is when function $f(x)$ can be approximated $\Sigma \frac{f^{(n)}(a)x^n}{n!}$.
+
+A special case of a Taylor series is when $a=0$, which we call a Maclaurin series.
 
 \end{document}
