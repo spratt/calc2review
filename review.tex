@@ -7,6 +7,9 @@
 \usepackage{fullpage}
 \usepackage{parskip}
 \usepackage{amsmath}
+\usepackage{titlesec}
+
+\newcommand{\sectionbreak}{\clearpage}
 
 \title{MATH 2007 Review}
 \author{Simon Pratt}
@@ -16,7 +19,10 @@
 
 {\Huge MATH 2007 Review}
 
-\section{Topics Covered}
+\vspace{1 cm}
+
+{\huge Topics Covered}
+
 {\tiny *Section numbers are from Nelson's custom text book for the course}
 
 Test 1
@@ -60,7 +66,6 @@ Final Exam
 \item 9.10 Taylor and Maclaurin Series
 \end{itemize}
 
-\newpage
 \section{Integration by Substitution}
 
 When we are presented with an integral that is the product of a
@@ -95,7 +100,6 @@ And substituting $u$ back in, we get:
 This method of integration is analagous to the chain rule for
 differentiation.
 
-\newpage
 \section{Integration by Parts}
 
 Sometimes we are presented with the integral of a product of
@@ -122,5 +126,174 @@ Let $u = x$, $dv = e^x$, and thusly $du = dx$, $v = e^x$, we get:
 
 This method of integration is analagous to the product rule for
 differentiation.
+
+\section{Trigonometric Integrals}
+
+\subsection{Evaluating $\int (sinx)^m (cosx)^ndx$}
+
+Using the identity $(sinx)^2 + (cosx)^2 = 1$ and integration by
+substitution, we can solve integrals of the form $\int (sinx)^m
+(cosx)^ndx$ as long as either $m$ or $n$ are odd.
+
+For example:
+
+\[
+\int (cosx)^2(sinx)^3dx
+\]
+
+We can substitute $(sinx)^2 = 1 - (cosx)^2$ to get:
+
+\[
+\int (cosx)^2 (1-(cosx)^2) sinx dx
+\]
+
+This expands to:
+
+\[
+\int (cosx)^2 sinx dx - \int (cosx)^4 sinx dx
+\]
+
+At which point we can substitute $u = cosx$, $du = -sinx dx$:
+
+\begin{align*}
+  &\int u^2 du - \int u^4 du \\
+  = &\frac{u^3}{3} - \frac{u^5}{5}
+\end{align*}
+
+And substituting $u$ back in:
+
+\[
+\frac{(cosx)^3}{3} - \frac{(cosx)^5}{5}
+\]
+
+This works similarly if the power of $cosx$ is odd.
+
+\newpage
+
+However, if both powers are even, we must use the half angle formulae:
+
+\begin{align*}
+  2 sinA cosB &= sin(A - B) + sin(A + B) \\
+  2 sinA sinB &= cos(A - B) - cos(A + B) \\
+  2 cosA cosB &= cos(A - B) + cos(A + B)
+\end{align*}
+
+Let $A=B$:
+
+\begin{align*}
+  2 sinA cosA &= 0 + sin(2A) \\
+  2 (sinA)^2 &= 1 - cos(2A) \\
+  2 (cosA)^2 &= 1 + cos(2A)
+\end{align*}
+
+So for example:
+
+\begin{align*}
+  &\int (sinx)^2 (cosx)^4 dx \\
+  = &\int 1/2(1 - cos2x) (1 + cos2x) dx \\
+  = &1/2 \int (1 + cos2x) dx - 1/2 \int cos2x (1 + cos2x) dx \\
+  = &1/2 ( \int dx + \int cos2x dx - \int cos2x dx + \int (cos2x)^2 dx ) \\
+  = &1/2 ( x + \int (cos2x)^2 dx ) \\
+  = &1/2 ( x + \int 1/2 (1 + cos4x) dx ) \\
+  = &1/2 ( x + 1/2 ( \int dx + \int cos4x dx ) ) \\
+  = &1/2 ( x + 1/2 ( x + sin4x ) ) \\
+  = & \frac{ 3x + sin4x }{4}
+\end{align*}
+
+\newpage
+
+\subsection{Evaluating $\int (tanx)^m (secx)^ndx$}
+
+Same idea using the identity:
+
+\begin{align*}
+  (cosx)^2 + (sinx)^2 &= 1 \\
+  1 + (tanx)^2 &= \frac{1}{(cosx)^2} \\
+  1 + (tanx)^2 &= (secx)^2
+\end{align*}
+
+Remembering:
+
+\begin{align*}
+  &\frac{d}{dx} (secx) = secx tanx \\
+  &\frac{d}{dx} (tanx) = (secx)^2 \\
+  &\int tanx dx = ln \left| secx \right| + C \\
+  &\int secx dx = ln \left| secx + tanx \right| + C \\
+\end{align*}  
+
+For example:
+
+\begin{align*}
+  &\int (secx)^3 dx \\
+  = &\int secx ((tanx)^2 + 1) dx \\
+  = &\int secx (tanx)^2 dx + \int secx dx \\
+\end{align*}
+
+Then substitute $(tanx)^2 = (secx)^2 - 1$:
+
+\begin{align*}
+  &\int secx (tanx)^2 dx + \int secx dx \\
+  = &\int secx ((secx)^2 -1) dx + \int secx dx \\
+  = &\int (secx)^3 dx - \int secx dx + \int secx dx \\
+  = &\int (secx)^3 dx
+\end{align*}
+
+\newpage
+
+Well crap.  Okay, try again with integration by parts using $u =
+secx$, $dv = (secx)^2$ and thusly $du = secx tanx$, $v = tanx$:
+
+\begin{align*}
+  &\int (secx)^3 dx \\
+  = &\int secx (secx)^2 \\
+  = &(secx)(tanx) - \int tanx (secx tanx) dx
+\end{align*}
+
+And we've shown about that $\int secx (tanx)^2 dx = \int (secx)^3 dx -
+\int secx dx$.  So we get:
+
+\begin{align*}
+  \int (secx)^3 dx &= (secx)(tanx) - \int (secx)^3 dx + \int secx dx \\
+  \int (secx)^3 dx + \int (secx)^3 dx &=
+  (secx)(tanx) + ln \left| secx + tanx \right| + C \\
+  2 \int (secx)^3 dx &= (secx)(tanx) + ln \left| secx + tanx \right| + C \\
+  \int (secx)^3 dx &= \frac{(secx)(tanx) + ln \left| secx + tanx \right| + C}{2}
+\end{align*}
+
+\section{Trigonometric Substitution}
+
+\section{Partial Fractions}
+
+\section{Indeterminate Forms and L'H\^{o}spital's Rule}
+
+\section{Improper Integrals}
+
+\section{Plane Curves and Parametric Equations}
+
+\section{Parametric Equations and Calculus}
+
+\section{Polar Coordinates and Polar Graphs}
+
+\section{Area and Arc Length in Polar Coordinates}
+
+\section{Sequences}
+
+\section{Series and Convergence}
+
+\section{The Integral Test and p-Series}
+
+\section{Comparisons of Series}
+
+\section{Alternating Series}
+
+\section{The Ratio and Root Tests}
+
+\section{Taylor Polynomials and Approximations}
+
+\section{Power Series}
+
+\section{Representation of Functions by Power Series}
+
+\section{Taylor and Maclaurin Series}
 
 \end{document}
