@@ -323,7 +323,46 @@ provided that these limits exist.  We can also:
 
 provided that both of the integrals are convergent.
 
-For example:
+For example
+
+\begin{align*}
+  &\int^0_{-\infty} x e^x dx \\
+  = &\lim_{t \to -\infty} \int^0_t x e^x dx \\
+\end{align*}
+
+Let $u = x$, $dv = e^x$, $du = dx$, $v = e^x$:
+
+\begin{align*}
+  = &\lim_{t \to -\infty} (x e^x - \int^0_t e^x dx) \\
+  = &\lim_{t \to -\infty} (xe^x]^0_t - \left[ e^x \right]^0_t) \\
+  = &\lim_{t \to -\infty} ((0 - te^t) - (e^0 - e^t)) \\
+  = &\lim_{t \to -\infty} (-te^t - 1 + e^t) \\
+\end{align*}
+
+\newpage
+
+We see that $e^t \to 0$ as $t \to -\infty$, so we have:
+
+\begin{displaymath}
+  -1 + \lim_{t \to -\infty} -te^t 
+\end{displaymath}
+
+we know this is an indeterminate form ($\infty \bullet 0$), we
+can use L'H\^{o}spital's Rule and get:
+
+\begin{align*}
+  &\lim_{t \to -\infty} -te^t \\
+  = &\lim_{t \to -\infty} \frac{-t}{e^{-t}} \\
+  = &\lim_{t \to -\infty} \frac{-1}{-e^{-t}} \\
+  = &\lim_{t \to -\infty} e^{-t} \\
+  = &0
+\end{align*}
+
+So:
+
+\begin{displaymath}
+  \int^0_{-\infty} x e^x dx = -1
+\end{displaymath}
 
 \section{Plane Curves and Parametric Equations}
 
