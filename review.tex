@@ -481,27 +481,50 @@ For example:
 
 \section{Taylor Polynomials and Approximations}
 
+The formula for the $n$th Taylor polynomial at $c$ is:
+
 $P_n(x) = \frac{f^{(n)}(c)}{n!}$
 
 For example:
 
 \section{Power Series}
 
-A power series is of the form $\sum c_n(x-a)^n$.  Also, we define $(x-a)^0$ as 1 even when $x=a$ for convenience.
+A power series is of the form $\sum c_n(x-a)^n$.  Also, we define
+$(x-a)^0$ as 1 even when $x=a$ for convenience.
 
-Such a series is either always convergent, converges only when $x=a$ or has some radius of convergence about $x=a$.
+Such a series is either always convergent, converges only when $x=a$
+or has some radius of convergence about $x=a$.
 
 For example:
 
 \section{Representation of Functions by Power Series}
 
-Wat.
+A function of the form $\frac{1}{1-f(x)}$ can be approximated using
+the geometric series formula:
+
+\[
+\sum_{n=0}^\infty (f(x))^n = \frac{1}{1-f(x)}
+\]
+
+And the radius of convergence for this power series is $\left| f(x) \right| < 1$.
+
+For example:
+
+\subsection{Differentiation and Integration of Power Series}
+
+If a power series has a radius of convergence $R > 0$, then it is
+differentiable and integratable on the interval $(a-R,a+R)$.
 
 For example:
 
 \section{Taylor and Maclaurin Series}
 
-A Taylor series is when function $f(x)$ can be approximated $\sum \frac{f^{(n)}(a)x^n}{n!}$.
+A Taylor series is when function $f(x)$ can be approximated at point
+$a$ with the function $\sum \frac{f^{(n)}(a)x^n}{n!}$.
+
+For example:
+
+\subsection{Maclaurin Series}
 
 A special case of a Taylor series is when $a=0$, which we call a Maclaurin series.
 
