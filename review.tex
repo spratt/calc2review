@@ -36,7 +36,7 @@
 
 {\huge Topics Covered}
 
-{\tiny *Section numbers are from Nelson's custom text book for the course}
+{\tiny Section numbers are from Nelson's custom text book for the course}
 
 Test 1
 \begin{itemize}
@@ -50,7 +50,7 @@ Test 2
 \begin{itemize}
 \item 8.5 Partial Fractions
 \item 8.7 Indeterminate Forms and L'H\^{o}spital's Rule
-\item 8.8 Improper Integrals
+\item 8.8 Improper Integrals*
 \item 10.2 Plane Curves and Parametric Equations
 \end{itemize}
 
@@ -58,7 +58,7 @@ Test 3
 \begin{itemize}
 \item 10.3 Parametric Equations and Calculus
 \item 10.4 Polar Coordinates and Polar Graphs
-\item 10.5 Area and Arc Length in Polar Coordinates
+\item 10.5 Area and Arc Length in Polar Coordinates*
 \item 9.1 Sequences
 \end{itemize}
 
@@ -66,18 +66,20 @@ Test 4
 \begin{itemize}
 \item 9.2 Series and Convergence
 \item 9.3 The Integral Test and p-Series
-\item 9.4 Comparisons of Series
+\item 9.4 Comparisons of Series*
 \item 9.5 Alternating Series
 \end{itemize}
 
 Final Exam
 \begin{itemize}
-\item 9.6 The Ratio and Root Tests
-\item 9.7 Taylor Polynomials and Approximations
+\item 9.6 The Ratio and Root Tests*
+\item 9.7 Taylor Polynomials and Approximations*
 \item 9.8 Power Series
-\item 9.9 Representation of Functions by Power Series
+\item 9.9 Representation of Functions by Power Series*
 \item 9.10 Taylor and Maclaurin Series
 \end{itemize}
+
+{\tiny *could not remember offhand}
 
 \section{Integration by Substitution}
 
@@ -292,15 +294,42 @@ For example:
 Common indeterminate forms are $\frac{0}{0}$, $\frac{\infty}{\infty}$
 and $\infty^\infty$.
 
+For example:
+
 \section{Improper Integrals}
 
-I don't remember this section at all.
+An improper integral is a definite integral either with an infinite
+interval or has a discontinuity in its interval.
+
+In the case of an integral with an infinite interval:
+
+\[
+\int^\infty_a f(x)dx = \lim_{t \to \infty} \int^t_a f(x)dx
+\]
+
+or
+
+\[
+\int^b_\infty f(x)dx = \lim_{t \to infty} \int^b_t f(x)dx
+\]
+
+provided that these limits exist.  We can also:
+
+\[
+\int^\infty_{-\infty} f(x)dx = \int^a_{-\infty}f(x)dx + \int^\infty_a f(x)dx
+\]
+
+provided that both of the integrals are convergent.
+
+For example:
 
 \section{Plane Curves and Parametric Equations}
 
 A plane curve is when we rotate a given curve about an axis.
 
 Parametric equations are when $x$ and $y$ are given in terms of a parameter $t$.
+
+For example:
 
 \section{Parametric Equations and Calculus}
 
@@ -326,6 +355,8 @@ Then we can determine $\frac{dy}{dx}$ by:
   \frac{dy}{dx} &= \frac{ \frac{dy}{dt} }{ \frac{dx}{dt} } \\
   &= \frac{g'(t)}{f'(t)}
 \end{align*}
+
+For example:
 
 \section{Polar Coordinates and Polar Graphs}
 
@@ -353,11 +384,15 @@ Formula for area: $A = \int^b_a \frac{1}{2} r^2 d \theta$
 
 Formula for arc length: $L = \int^b_a \sqrt{r^2 + \left( \frac{dr}{d \theta} \right)^2} d \theta$
 
+For example:
+
 \section{Sequences}
 
 A sequence is an ordered set of numbers, such as $1,2,3$.  A sequence
 can be infinitely long such as $1,2,3,...$, and can be defined as $a_n
 = n$ where $a_n$ is the $n$th term in the sequence.
+
+For example:
 
 \section{Series and Convergence}
 
@@ -370,6 +405,8 @@ When a the limit of the value of a series or integral as n approaches
 infinity is defined and is equal to $L$, we say that the series or
 integral converges to $L$.
 
+For example:
+
 \section{The Integral Test and p-Series}
 
 The integral test states that given a series of the form
@@ -378,6 +415,8 @@ then the series must also converge.
 
 A p-series is an infinite series of the form $\Sigma \frac{1}{n^p}$.
 Such a series converges when $p > 1$ and diverges otherwise.
+
+For example:
 
 \section{Comparisons of Series}
 
@@ -390,7 +429,11 @@ $\Sigma f(n)$ is said to be absolutely convergent if $\Sigma \left|
   f(n) \right|$ is convergent.  Any series which is absolutely
 convergent is also convergent.
 
+For example:
+
 \section{The Ratio and Root Tests}
+
+\subsection{The Ratio Test}
 
 The ratio test shows that given $\Sigma a_n$, and:
 
@@ -402,11 +445,19 @@ The ratio test shows that given $\Sigma a_n$, and:
 If $L<1$ then the series converges, if $L>1$ then the series diverges,
 and if $L=1$ then the ratio test is inconclusive.
 
+For example:
+
+\subsection{The Root Test}
+
 I forget the root test.
+
+For example:
 
 \section{Taylor Polynomials and Approximations}
 
 Wat.
+
+For example:
 
 \section{Power Series}
 
@@ -414,14 +465,20 @@ A power series is of the form $\Sigma c_n(x-a)^n$.  Also, we define $(x-a)^0$ as
 
 Such a series is either always convergent, converges only when $x=a$ or has some radius of convergence about $x=a$.
 
+For example:
+
 \section{Representation of Functions by Power Series}
 
 Wat.
+
+For example:
 
 \section{Taylor and Maclaurin Series}
 
 A Taylor series is when function $f(x)$ can be approximated $\Sigma \frac{f^{(n)}(a)x^n}{n!}$.
 
 A special case of a Taylor series is when $a=0$, which we call a Maclaurin series.
+
+For example:
 
 \end{document}
