@@ -15,6 +15,19 @@
 \author{Simon Pratt}
 \date{\today}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% New Square Root
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% it renames \sqrt as \oldsqrt
+\let\oldsqrt\sqrt
+% it defines the new \sqrt in terms of the old one
+\def\sqrt{\mathpalette\DHLhksqrt}
+\def\DHLhksqrt#1#2{%
+\setbox0=\hbox{$#1\oldsqrt{#2\,}$}\dimen0=\ht0
+\advance\dimen0-0.2\ht0
+\setbox2=\hbox{\vrule height\ht0 depth -\dimen0}%
+{\box0\lower0.4pt\box2}}
+
 \begin{document}
 
 {\Huge MATH 2007 Review}
@@ -316,12 +329,29 @@ Then we can determine $\frac{dy}{dx}$ by:
 
 \section{Polar Coordinates and Polar Graphs}
 
-Polar coordinates are given as a tuple of radius and angle.  A polar
-graph is radius as a function of angle.
+Polar coordinates are given as a tuple of radius and angle.  Note that
+since angles are modulo 0 and the angle of a full circle ($360^o$ or
+$2\pi$), coordinates for a point aren't unique.
+
+For example:
+
+\[
+(2,\pi) = (2,3\pi) = (2,-\pi)
+\]
+
+A polar graph is radius $r$ as a function of angle $\theta$.
+
+For example:
+
+\[
+r^2 = cos \theta
+\]
 
 \section{Area and Arc Length in Polar Coordinates}
 
-I don't remember.
+Formula for area: $A = \int^b_a \frac{1}{2} r^2 d \theta$
+
+Formula for arc length: $L = \int^b_a \sqrt{r^2 + \left( \frac{dr}{d \theta} \right)^2} d \theta$
 
 \section{Sequences}
 
