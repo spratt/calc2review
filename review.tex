@@ -15,6 +15,8 @@
 \author{Simon Pratt}
 \date{\today}
 
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % New Square Root
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -310,7 +312,7 @@ In the case of an integral with an infinite interval:
 or
 
 \[
-\int^b_\infty f(x)dx = \lim_{t \to infty} \int^b_t f(x)dx
+\int^b_\infty f(x)dx = \lim_{t \to \infty} \int^b_t f(x)dx
 \]
 
 provided that these limits exist.  We can also:
@@ -380,9 +382,9 @@ r^2 = cos \theta
 
 \section{Area and Arc Length in Polar Coordinates}
 
-Formula for area: $A = \int^b_a \frac{1}{2} r^2 d \theta$
+Formula for area: $A = \displaystyle\int^b_a \frac{1}{2} r^2 d \theta$
 
-Formula for arc length: $L = \int^b_a \sqrt{r^2 + \left( \frac{dr}{d \theta} \right)^2} d \theta$
+Formula for arc length: $L = \displaystyle\int^b_a \sqrt{r^2 + \left( \frac{dr}{d \theta} \right)^2} d \theta$
 
 For example:
 
@@ -398,7 +400,7 @@ For example:
 
 A series is a sum of the numbers in a sequence, such as $1+2+3$.  A
 sequence can be infinitely long, such as $1+2+3$, and can be defined
-using sigma notation: $S = \Sigma^\infty_{n=1}f(n)$ where $S$ is the
+using sigma notation: $S = \displaystyle\sum_{n=1}^{\infty} f(n)$ where $S$ is the
 value of the sum from 1 to infinity of the function $f(n)$.
 
 When a the limit of the value of a series or integral as n approaches
@@ -410,10 +412,10 @@ For example:
 \section{The Integral Test and p-Series}
 
 The integral test states that given a series of the form
-$\Sigma^\infty_{k=1}f(n)$, then if the integral $\int f(n)$ converges,
+$\displaystyle\sum^\infty_{k=1}f(n)$, then if the integral $\displaystyle\int f(n)dn$ converges,
 then the series must also converge.
 
-A p-series is an infinite series of the form $\Sigma \frac{1}{n^p}$.
+A p-series is an infinite series of the form $\displaystyle\sum \frac{1}{n^p}$.
 Such a series converges when $p > 1$ and diverges otherwise.
 
 For example:
@@ -427,6 +429,8 @@ then $b_n$ must also diverge.
 
 For example:
 
+\subsection{Limit Comparison Test}
+
 If $a_n$, $b_n$ are both series with positive terms, then if
 
 \[
@@ -439,8 +443,8 @@ For example:
 
 \section{Alternating Series}
 
-An alternating series is of the form $\Sigma (-1)^{n-1}a_n$.  A series
-$\Sigma f(n)$ is said to be absolutely convergent if $\Sigma \left|
+An alternating series is of the form $\sum (-1)^{n-1}a_n$.  A series
+$\sum f(n)$ is said to be absolutely convergent if $\sum \left|
   f(n) \right|$ is convergent.  Any series which is absolutely
 convergent is also convergent.
 
@@ -450,12 +454,12 @@ For example:
 
 \subsection{The Ratio Test}
 
-The ratio test shows that given $\Sigma a_n$, and:
+The ratio test shows that given $\sum a_n$, and:
 
-\begin{math}
-  \lim_{n \to \infty} a_n = 0 \\
-  L = \lim_{n \to \infty} \left| \frac{a_{n+1}}{a_n} \right|
-\end{math}
+\begin{align*}
+  &\lim_{n \to \infty} a_n = 0 \\
+  &L = \lim_{n \to \infty} \left| \frac{a_{n+1}}{a_n} \right|
+\end{align*}
 
 If $L<1$ then the series converges, if $L>1$ then the series diverges,
 and if $L=1$ then the ratio test is inconclusive.
@@ -464,7 +468,14 @@ For example:
 
 \subsection{The Root Test}
 
-I forget the root test.
+The root test shows that given $\sum a_n$, and:
+
+\[
+L = \lim_{n \to \infty} \oldsqrt[n]{\left| a_n \right|}
+\]
+
+Then if $L < 1$: $\sum a_n$ converges, if $L > 1$: $\sum a_n$
+diverges and if $L = 1$: the root test is inconclusive.
 
 For example:
 
@@ -476,7 +487,7 @@ For example:
 
 \section{Power Series}
 
-A power series is of the form $\Sigma c_n(x-a)^n$.  Also, we define $(x-a)^0$ as 1 even when $x=a$ for convenience.
+A power series is of the form $\sum c_n(x-a)^n$.  Also, we define $(x-a)^0$ as 1 even when $x=a$ for convenience.
 
 Such a series is either always convergent, converges only when $x=a$ or has some radius of convergence about $x=a$.
 
@@ -490,7 +501,7 @@ For example:
 
 \section{Taylor and Maclaurin Series}
 
-A Taylor series is when function $f(x)$ can be approximated $\Sigma \frac{f^{(n)}(a)x^n}{n!}$.
+A Taylor series is when function $f(x)$ can be approximated $\sum \frac{f^{(n)}(a)x^n}{n!}$.
 
 A special case of a Taylor series is when $a=0$, which we call a Maclaurin series.
 
