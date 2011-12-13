@@ -22,7 +22,7 @@
 
 
 \title{MATH 2007 Review}
-\author{Simon Pratt}
+\author{Simon Pratt, Alexis Beingessner}
 \date{\today}
 
 
@@ -217,15 +217,12 @@ So for example:
 
 \begin{align*}
   &\int (sinx)^2 (cosx)^4 dx \\
-  = &\begin{mistake}\int 1/2(1 - cos2x) (1 + cos2x) dx  \end{mistake} \\
-  = &1/2 \int (1 + cos2x) dx - 1/2 \int cos2x (1 + cos2x) dx \\
-  = &1/2 ( \int dx + \int cos2x dx - \int cos2x dx + \int (cos2x)^2 dx ) \\
-  = &1/2 ( x + \int (cos2x)^2 dx ) \\
-  = &1/2 ( x + \int 1/2 (1 + cos4x) dx ) \\
-  = &1/2 ( x + 1/2 ( \int dx + \int cos4x dx ) ) \\
-  = &1/2 ( x + 1/2 ( x + sin4x ) ) \\
-  = & \frac{ 3x + sin4x }{4}
+  = &\int 1/8 (1 - cos2x) (1 + cos2x) (1 + cos2x) dx  \\
+  = &1/8 (\int (1 + cos2x) (1 + cos2x) dx - \int cos2x (1 + cos2x) (1 + cos2x) dx) \\
+  ...
 \end{align*}
+
+You get the idea.
 
 \newpage
 
@@ -364,7 +361,7 @@ can use L'H\^{o}spital's Rule and get:
   &\lim_{t \to -\infty} -te^t \\
   = &\lim_{t \to -\infty} \frac{-t}{e^{-t}} \\
   = &\lim_{t \to -\infty} \frac{-1}{-e^{-t}} \\
-  = &\begin{mistake}\lim_{t \to -\infty} e^{-t} \end{mistake}\\
+  = &\lim_{t \to -\infty} e^{t} \\
   = &0
 \end{align*}
 
@@ -412,7 +409,7 @@ For example:
 \section{Polar Coordinates and Polar Graphs}
 
 Polar coordinates are given as a tuple of radius and angle.  Note that
-since angles are modulo \begin{mistake}0\end{mistake} and the angle of a full circle ($360^o$ or
+since angles are modulo the angle of a full circle ($360^o$ or
 $2\pi$), coordinates for a point aren't unique.
 
 For example:
@@ -456,8 +453,8 @@ For example:
 \section{Sequences}
 
 A sequence is an ordered set of numbers, such as $1,2,3$.  A sequence
-can be infinitely long such as $1,2,3,...$, and can be defined as \begin{mistake}$a_n
-= n$\end{mistake} where $a_n$ is the $n$th term in the sequence.
+can be infinitely long such as $1,2,3,...$, and can be defined as $a_n
+= f(n)$ where $a_n$ is the $n$th term in the sequence.
 
 For example:
 
