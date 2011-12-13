@@ -9,8 +9,17 @@
 \usepackage{amsmath}
 \usepackage{titlesec}
 \usepackage{graphics}
+\usepackage{color}
 
 \newcommand{\sectionbreak}{\clearpage}
+
+\newenvironment{mistake}
+{\color{red}}
+{}
+\newenvironment{correction}
+{\color{green}}
+{}
+
 
 \title{MATH 2007 Review}
 \author{Simon Pratt}
@@ -189,7 +198,7 @@ This works similarly if the power of $cosx$ is odd.
 \newpage
 
 However, if both powers are even, we must use the half angle formulae:
-
+\
 \begin{align*}
   2 sinA cosB &= sin(A - B) + sin(A + B) \\
   2 sinA sinB &= cos(A - B) - cos(A + B) \\
@@ -208,7 +217,7 @@ So for example:
 
 \begin{align*}
   &\int (sinx)^2 (cosx)^4 dx \\
-  = &\int 1/2(1 - cos2x) (1 + cos2x) dx \\
+  = &\begin{mistake}\int 1/2(1 - cos2x) (1 + cos2x) dx  \end{mistake} \\
   = &1/2 \int (1 + cos2x) dx - 1/2 \int cos2x (1 + cos2x) dx \\
   = &1/2 ( \int dx + \int cos2x dx - \int cos2x dx + \int (cos2x)^2 dx ) \\
   = &1/2 ( x + \int (cos2x)^2 dx ) \\
@@ -267,7 +276,7 @@ secx$, $dv = (secx)^2$ and thusly $du = secx tanx$, $v = tanx$:
   = &(secx)(tanx) - \int tanx (secx tanx) dx
 \end{align*}
 
-And we've shown about that $\int secx (tanx)^2 dx = \int (secx)^3 dx -
+And we've shown \begin{correction}above\end{correction} that $\int secx (tanx)^2 dx = \int (secx)^3 dx -
 \int secx dx$.  So we get:
 
 \begin{align*}
@@ -280,7 +289,7 @@ And we've shown about that $\int secx (tanx)^2 dx = \int (secx)^3 dx -
 
 \section{Trigonometric Substitution}
 
-When we have an integral containing a square root of the sum of two
+When we have an integral containing a square root of the sum \begin{correction}or difference\end{correction} of two
 squares, we can substitute trig identities to make the integral simpler.
 
 For example:
@@ -313,7 +322,7 @@ In the case of an integral with an infinite interval:
 or
 
 \[
-\int^b_\infty f(x)dx = \lim_{t \to \infty} \int^b_t f(x)dx
+\int^b_{\begin{correction}-\end{correction}\infty} f(x)dx = \lim_{t \to \begin{correction}-\end{correction}\infty} \int^b_t f(x)dx
 \]
 
 provided that these limits exist.  We can also:
@@ -322,7 +331,7 @@ provided that these limits exist.  We can also:
 \int^\infty_{-\infty} f(x)dx = \int^a_{-\infty}f(x)dx + \int^\infty_a f(x)dx
 \]
 
-provided that both of the integrals are convergent.
+provided that both of the integrals are convergent \begin{correction}and f(x) is continuous on the interval $(-\infty,\infty)$\end{correction}.
 
 For example
 
@@ -335,7 +344,7 @@ Let $u = x$, $dv = e^x$, $du = dx$, $v = e^x$:
 
 \begin{align*}
   = &\lim_{t \to -\infty} (x e^x - \int^0_t e^x dx) \\
-  = &\lim_{t \to -\infty} (xe^x]^0_t - \left[ e^x \right]^0_t) \\
+  = &\lim_{t \to -\infty} (\begin{correction}[\end{correction}xe^x]^0_t - \left[ e^x \right]^0_t) \\
   = &\lim_{t \to -\infty} ((0 - te^t) - (e^0 - e^t)) \\
   = &\lim_{t \to -\infty} (-te^t - 1 + e^t) \\
 \end{align*}
@@ -355,7 +364,7 @@ can use L'H\^{o}spital's Rule and get:
   &\lim_{t \to -\infty} -te^t \\
   = &\lim_{t \to -\infty} \frac{-t}{e^{-t}} \\
   = &\lim_{t \to -\infty} \frac{-1}{-e^{-t}} \\
-  = &\lim_{t \to -\infty} e^{-t} \\
+  = &\begin{mistake}\lim_{t \to -\infty} e^{-t} \end{mistake}\\
   = &0
 \end{align*}
 
@@ -403,7 +412,7 @@ For example:
 \section{Polar Coordinates and Polar Graphs}
 
 Polar coordinates are given as a tuple of radius and angle.  Note that
-since angles are modulo 0 and the angle of a full circle ($360^o$ or
+since angles are modulo \begin{mistake}0\end{mistake} and the angle of a full circle ($360^o$ or
 $2\pi$), coordinates for a point aren't unique.
 
 For example:
@@ -447,19 +456,19 @@ For example:
 \section{Sequences}
 
 A sequence is an ordered set of numbers, such as $1,2,3$.  A sequence
-can be infinitely long such as $1,2,3,...$, and can be defined as $a_n
-= n$ where $a_n$ is the $n$th term in the sequence.
+can be infinitely long such as $1,2,3,...$, and can be defined as \begin{mistake}$a_n
+= n$\end{mistake} where $a_n$ is the $n$th term in the sequence.
 
 For example:
 
 \section{Series and Convergence}
 
 A series is a sum of the numbers in a sequence, such as $1+2+3$.  A
-sequence can be infinitely long, such as $1+2+3$, and can be defined
+\begin{correction}series\end{correction} can be infinitely long, such as \begin{correction}$1+2+3+...$\end{correction}, and can be defined
 using sigma notation: $S = \displaystyle\sum_{n=1}^{\infty} f(n)$ where $S$ is the
 value of the sum from 1 to infinity of the function $f(n)$.
 
-When a the limit of the value of a series or integral as n approaches
+When the limit of the value of a series or integral as n approaches
 infinity is defined and is equal to $L$, we say that the series or
 integral converges to $L$.
 
@@ -469,7 +478,7 @@ For example:
 
 The integral test states that given a series of the form
 $\displaystyle\sum^\infty_{k=1}f(n)$, then if the integral $\displaystyle\int f(n)dn$ converges,
-then the series must also converge.
+then the series must also converge. \begin{correction}I believe it's stronger than that, it's iff. However I also believe there are some restrictions on this as well. Something about being strictly positive, perhaps?\end{correction}
 
 A p-series is an infinite series of the form $\displaystyle\sum \frac{1}{n^p}$.
 Such a series converges when $p > 1$ and diverges otherwise.
@@ -502,9 +511,11 @@ For example:
 An alternating series is of the form $\sum (-1)^{n-1}a_n$.  A series
 $\sum f(n)$ is said to be absolutely convergent if $\sum \left|
   f(n) \right|$ is convergent.  Any series which is absolutely
-convergent is also convergent.
+convergent is also convergent. \begin{correction} However it may converge, but not absolutely. Then it converges \emph{conditionally} (e.g. $\Sigma-\frac{1}{n}$).\end{correction}
 
 For example:
+
+
 
 \section{The Ratio and Root Tests}
 
